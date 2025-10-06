@@ -1,0 +1,377 @@
+/* ==============================
+   Reset y Estilos Base
+   ============================== */
+html, body, #root, .App {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  background: radial-gradient(circle at top left, #0a0f1f, #162447, #1f4068, #e43f5a);
+  color: #e0e0e0;
+  line-height: 1.6;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, p, span {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin: 0;
+}
+.App {
+  height: 100vh;             /* ocupa toda la pantalla */
+  width: 100%;
+  overflow-y: auto;        /* permite scroll vertical */
+  scroll-snap-type: y mandatory; /* activa scroll "pantalla por pantalla" */
+  scroll-behavior: smooth;   /* hace el scroll más suave */
+}
+
+.navbar {
+  background: rgba(0, 0, 0, 0.25); /* panel flotante semitransparente */
+  backdrop-filter: blur(12px); /* efecto vidrio futurista */
+  padding: 0.8rem 2rem;
+  position: fixed;
+  top: 20px; /* separación del borde superior */
+  left: 50%;
+  transform: translateX(-50%); /* centrado horizontal */
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  border-radius: 30px; /* bordes redondeados */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4), 0 0 40px rgba(157, 78, 221, 0.2);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.navbar:hover {
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6), 0 0 50px rgba(157, 78, 221, 0.4);
+  border-color: rgba(0, 255, 255, 0.6);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: #00f5ff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.05rem;
+  position: relative;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(90deg, #00f5ff, #9d4edd);
+  transition: width 0.3s ease;
+  border-radius: 1px;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+.navbar a:hover {
+  color: #9d4edd;
+  text-shadow: 0 0 6px #00f5ff, 0 0 12px #9d4edd;
+}
+
+/* ==============================
+   Hero Section
+   ============================== */
+.header {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5%;
+  background: radial-gradient(circle at top left, #0a0f1f, #162447, #1f4068, #e43f5a);
+  position: relative;
+  text-align: center;
+}
+
+.hero-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.hero-left {
+  flex: 0 0 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding-left: 1rem;
+  text-align: center;
+}
+
+.hero-right {
+  flex: 0 0 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hero Texto */
+.hero-intro {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.hero-greeting1 {
+  color: #00f5ff;
+  font-weight: bold;
+}
+
+.hero-name {
+  font-size: 3rem;
+  font-weight: bold;
+  -webkit-background-clip: text;
+  margin: 0.5rem 0;
+  display: inline-block;
+}
+
+.hero-text h3 {
+  font-size: 2.6rem;
+  color: #22c55e;
+}
+
+/* Shuffle Text */
+.shuffle-parent {
+  display: inline-block;
+  font-size: 1.8rem;
+  line-height: 1.2;
+  font-family: 'Press Start 2P', sans-serif;
+  text-transform: uppercase;
+  visibility: hidden;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.shuffle-parent.is-ready {
+  visibility: visible;
+}
+
+.shuffle-char-wrapper {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: baseline;
+  position: relative;
+}
+
+.shuffle-char-wrapper > span {
+  display: inline-flex;
+  will-change: transform;
+}
+
+.shuffle-char {
+  display: inline-block;
+  text-align: center;
+  line-height: 1;
+  font-size: 1.8rem;
+}
+
+/* Hero Botones */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  gap: 1rem;
+}
+
+.hero-buttons .btn {
+  background: linear-gradient(90deg, #00f5ff, #9d4edd);
+  color: #fff;
+  padding: 0.8rem 1.4rem;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-buttons .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 12px #00f5ff;
+}
+
+/* ==============================
+   Secciones Generales
+   ============================== */
+section {
+  padding: 3rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  background: linear-gradient(90deg, #00f5ff, #9d4edd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+section, .header, footer{
+  height: 100vh;             /* cada sección ocupa una pantalla completa */
+  scroll-snap-align: start;  /* se ancla al inicio cuando haces scroll */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* ==============================
+   Carrusel de Proyectos
+   ============================== */
+.projects-carousel {
+  overflow-x: auto;
+  padding: 20px 0;
+  display: flex;
+  gap: 20px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.card {
+  flex: 0 0 200px;
+  background: linear-gradient(135deg, #ffffff, #df0707);
+  color: #fff;
+  border-radius: 16px;
+  padding: 15px;
+  box-shadow: 0 8px 20px rgba(0, 255, 255, 0.1);
+  scroll-snap-align: start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 255, 255, 0.3);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  color: #00ffff;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  opacity: 0.85;
+}
+
+.card a {
+  text-decoration: none;
+  color: #00ffff;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.card a:hover {
+  color: #7df9ff;
+}
+
+/* ==============================
+   Sección Skills
+   ============================== */
+.skills {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  
+}
+
+.skills h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #00f5ff, #9d4edd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.skills-container {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skill-card {
+  background: linear-gradient(135deg, #0a0f1f, #162447);
+  color: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  flex: 0 0 250px;
+  box-shadow: 0 8px 20px rgba(0, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 255, 255, 0.3);
+}
+
+.skill-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #00ffff;
+}
+
+.tech-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.tech-logos img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.tech-logos img:hover {
+  transform: scale(1.2);
+}
+
+/* ==============================
+   Responsivo
+   ============================== */
+@media (max-width: 1024px) {
+  .hero-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-left, .hero-right {
+    flex: 1 0 100%;
+    padding-left: 0;
+  }
+  .hero-name {
+    font-size: 2.5rem;
+  }
+  .shuffle-parent,
+  .shuffle-char {
+    font-size: 1.5rem;
+  }
+  .hero-buttons {
+    justify-content: center;
+  }
+}

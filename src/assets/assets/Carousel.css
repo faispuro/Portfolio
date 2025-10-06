@@ -1,0 +1,143 @@
+/* ==============================
+   Sección Proyectos
+   ============================== */
+.projects-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.projects-title {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #00f5ff, #9d4edd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Carrusel */
+.projects-carousel-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.projects-carousel {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 1rem 0;
+  scrollbar-width: none;
+}
+.projects-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Tarjetas */
+.project-card {
+  flex: 0 0 280px;
+  background: linear-gradient(135deg, #0a0f1f, #162447);
+  color: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  scroll-snap-align: center;
+  box-shadow: 0 8px 20px rgba(0, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 255, 255, 0.3);
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  color: #00ffff;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  color: #cfd8fc;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.project-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #00f5ff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.2rem;
+  background: rgba(0, 245, 255, 0.1);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.project-card a:hover {
+  background: rgba(0, 245, 255, 0.2);
+  color: #7df9ff;
+}
+
+/* Flechas */
+.arrow {
+  background: rgba(0, 245, 255, 0.1);
+  color: #00f5ff;
+  border: 1px solid rgba(0, 245, 255, 0.3);
+  font-size: 1.3rem;
+  border-radius: 50%;
+  padding: 0.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.arrow:hover {
+  background: rgba(0, 245, 255, 0.25);
+  transform: translateY(-50%) scale(1.15);
+}
+
+.arrow.left {
+  left: -2rem;
+}
+
+.arrow.right {
+  right: -2rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .project-card {
+    flex: 0 0 80%;
+  }
+
+  .arrow.left {
+    left: -1rem;
+  }
+
+  .arrow.right {
+    right: -1rem;
+  }
+}

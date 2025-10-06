@@ -1,0 +1,73 @@
+/* ==============================
+   Círculo animado y botones orbitando
+   ============================== */
+.circle-container {
+  position: relative;
+  width: 450px;  /* aumenté de 350px */
+  height: 450px; /* aumenté de 350px */
+  margin: 0 auto; /* centrado horizontal */
+}
+
+.center-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;  /* aumenté tamaño */
+  height: 120px; /* aumenté tamaño */
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  box-shadow: 0 0 25px rgba(79, 172, 254, 0.6);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 25px rgba(79, 172, 254, 0.6);}
+  50% { box-shadow: 0 0 50px rgba(79, 172, 254, 0.9);}
+  100% { box-shadow: 0 0 25px rgba(79, 172, 254, 0.6);}
+}
+
+.user-icon {
+  font-size: 3rem; /* más grande */
+  color: white;
+}
+
+.orbit {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Botones orbitando */
+.circle-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotate(calc(var(--i) * 51.4deg))
+    translate(180px) /* aumenté distancia del centro */
+    rotate(calc(-1 * var(--i) * 51.4deg));
+  background-color: var(--color);
+  color: white;
+  font-size: 1rem; /* un poco más grande */
+  padding: 10px 18px; /* más padding */
+  border-radius: 14px; /* ligeramente más grande */
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+  cursor: pointer;
+  border: none;
+  font-family: "Orbitron", sans-serif;
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.circle-btn:hover {
+  transform: scale(1.15) rotate(calc(var(--i) * 51.4deg))
+    translate(180px)
+    rotate(calc(-1 * var(--i) * 51.4deg));
+  box-shadow: 0 0 22px var(--color);
+}
